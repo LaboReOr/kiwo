@@ -1,0 +1,432 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/helvetica-neue-55');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --negro: black;
+    --blanco: white;
+
+    --Sombra: rgba(0, 0, 0, 0.12);
+
+    --grisNormal: rgb(227, 227, 227);
+    --grisClaro: rgb(244, 244, 244);
+    --grisOscuro: rgb(177, 177, 177);
+
+    --rojo: rgb(253, 0, 0);
+    --rojoOscuro: rgb(236, 0, 0);
+
+    --azul: rgb(26, 125, 211);
+
+    --negroClaro: rgb(24, 24, 24);
+
+    --fFamily2:  "Barlow", sans-serif;
+    --fFamily:'Helvetica Neue', sans-serif;
+    --fWeight: 400;
+    --fStyle: normal;
+
+    /* --maxWITH: 1440px; */
+
+    --headerHEIGHT: 70px;
+    --headerTOPH: 40px;
+    --carouselMAXHEIGHT: 400px;
+}
+
+/* ---------------------------------------------- */
+/* HEADER */
+/* ---------------------------------------------- */
+
+.header {
+    position: fixed;
+    z-index: 20;
+}
+
+.headerTOP {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: var(--headerTOPH);
+
+    font-family: var(--fFamily2);
+    font-weight: 700;
+    font-size: 18px;
+
+    color: var(--blanco);
+    background-color: var(--rojoOscuro);
+}
+
+.headerBOT {
+    display: flex;
+    justify-content: center;
+
+    width: 100vw;
+    background-color: var(--rojo);
+}
+
+.maxWITH {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    max-width: var(--maxWITH);
+}
+ /* topNAV */
+
+.topNAV {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    
+    width: 100%;
+    height: var(--headerHEIGHT);
+    max-height: var(--headerHEIGHT);
+    
+}
+
+.topNAV img {
+    height: 100%;
+}
+
+.topNAV .imgNav {
+    width: 493px;
+}
+
+.midNav {
+    display: flex;
+    justify-content: center;
+
+    gap: 8px;
+    width: 100%;
+    height: 100%;
+}
+
+.midNav .categ {
+    font-family: var(--fFamily);
+    font-size: 18px;
+    color: var(--blanco);
+    text-decoration: none;
+    text-align: center;
+    
+    height: 100%;
+
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+}
+
+.midNav .categ:hover {
+    border-bottom: 2px solid var(--blanco);
+}
+
+/* Right Nav */
+.rightNAV {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rightNAV i {
+    font-size: 25px;
+    color: var(--blanco);
+}
+
+/* seach bar */
+.searchbar form {
+    height: 100%;
+    width: 60vw;
+    max-width: 200px;
+
+    border-radius: 3px;
+    background-color: var(--blanco);
+    
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 8px 5px 5px 0;
+}
+
+.searchbar input {
+    all: unset;
+
+    font-family: var(--fFamily);
+    color: var(--negro);
+
+    height: 100%;
+    width: 90%;
+    padding: 0 0 0 10%;
+}
+
+.searchbar button{
+    all: unset;
+}
+
+.searchbar i {
+    color: var(--negro);
+    filter: opacity(50%);
+    transition: 0.2s;
+    width: 100%;
+    font-size: 20px;
+}
+
+.searchbar button:hover i {
+    filter: opacity(100%);
+}
+
+/* Padding Nav */
+.paddingNav {
+    height: 100%;
+    padding: 15px;
+}
+
+/* mobileRightNAV */
+.mobileRightNAV {
+    display: none;
+    color: var(--blanco);
+}
+
+.mobileRightNAV .bx-menu {
+    font-size: 30px;
+}
+
+/* Nino */
+.topNAV .nina,
+.topNAV .nino {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    
+    position: absolute;
+    top: -300%;
+    left: 0;
+    
+    padding: 20px 0 40px 0;
+    width: 100vw;
+    
+    background-color: var(--rojo);
+    z-index: 19;
+    
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+
+    /* transition: max-height 0.6s ease-in-out, opacity 0.3s ease-in-out;
+    max-height: 0;
+    opacity: 0; */
+    transition: max-height 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+/* EFECTO 1 */
+/* .topNAV .nina,
+.topNAV .nino {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    
+    position: absolute;
+    top: -160%;
+    opacity: 0%;
+    left: 0;
+    
+    padding: 20px 0 40px 0;
+    width: 100vw;
+    
+    background-color: var(--rojo);
+    z-index: -1;
+
+    transition: top 0.2s ease-in-out, opacity 0.2s ease-in-out;
+} */
+
+.topNAV .nina div,
+.topNAV .nino div{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    font-family: var(--fFamily);
+    color: var(--blanco);
+}
+.topNAV .nina h3,
+.topNAV .nino h3 {
+    margin: 0 0 10px 0;
+    font-weight: 500;
+}
+
+.topNAV .nina div a,
+.topNAV .nino div a{
+    text-decoration: none;
+    color: var(--blanco);
+    filter: opacity(60%);
+    transition: 0.2s;
+}
+
+.topNAV .nina div a:hover,
+.topNAV .nino div a:hover{
+    filter: opacity(100%);
+}
+
+/* HOVERS MID NAV */
+
+.midNav .ninaHOVER:hover + .nina,
+.midNav .ninoHOVER:hover + .nino{ /* El + se usa si una etiqueta es adyacente a la otra */
+    /* display: flex; */
+    /* top: 100%;
+    opacity: 100%; */
+
+    opacity: 100%;
+    max-height: 250px;
+    top: 100%;
+
+    /* max-height: 500px;
+    opacity: 1; */
+}
+
+.midNav .nina:hover,
+.midNav .nino:hover{
+    /* display: flex; */
+    /* top: 100%;
+    opacity: 100%; */
+
+    opacity: 100%;
+    max-height: 250px;
+    top: 100%;
+
+    /* max-height: 500px;
+    opacity: 1; */
+}
+
+
+/* Media */
+@media (max-width: 768px) {
+    .midNav {
+        display: none;
+    }
+    .searchbar{
+        width: 40vw;
+    }
+    .rightNAV {
+        display: none;
+    }
+
+    .rightNAV a{
+        display: none;
+    }
+    .mobileRightNAV{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .searchbar form {
+        width: auto;
+    }
+}
+
+
+
+.menuMobileButton {
+    all: unset;
+}
+
+/* MENU DESPLEGABLE MOBILE */
+
+.menuMobileDIV {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--rojo);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%; /* Oculta el menú al principio */
+    transition: left 0.3s ease; /* Animación de entrada y salida */
+}
+
+/* Estado cuando el menú está visible */
+.menuMobileDIV.show {
+    left: 0;
+}
+
+/* top mobile */
+.topMenuMobile {
+    height: calc(var(--headerHEIGHT) + 10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--blanco);
+    margin-bottom: 30px;
+    padding: 0 20px;
+}
+
+.topMenuMobile .linkIMG{
+    height: 62%;
+}
+
+.topMenuMobile .menuIMG {
+    height: 100%;
+}
+
+.topMenuMobile #crossMenuMobile {
+    all: unset;
+}
+
+.topMenuMobile .bx-x {
+    font-size: 50px;
+}
+
+.topMenuMobile .invisible {
+    opacity: 0;
+}
+
+
+/* options */
+.otrosMenuMobile,
+.categoriasMenuMobile {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.otrosMenuMobile a,
+.categoriasMenuMobile a {
+    display: flex;
+
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 25px;
+    font-family: var(--fFamily2);
+    
+    padding: 5px 0;
+}
+
+.otrosMenuMobile p,
+.categoriasMenuMobile p {
+    padding: 5px 0;
+}
+
+.categoriasMenuMobile a {
+    font-weight: 700;
+}
+
+.otrosMenuMobile a {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.categoriasMenuMobile {
+    margin-bottom: 5px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--blanco);
+}

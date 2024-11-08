@@ -1,0 +1,69 @@
+// const totalSlidess = document.querySelectorAll('.carouselImages-item').length;
+let currentSlides = 0;
+let visibleItems = 5;
+const items = document.querySelectorAll('.carouselImages-item');
+const totalSlidess = items.length;
+
+function updateVisibleItems() {
+    if (window.matchMedia("(max-width: 425px)").matches) {
+        visibleItems = 1; // Cambia a 1 elementos visibles si la pantalla es menor a 425px
+    } else if (window.matchMedia("(max-width: 768px)").matches){
+        visibleItems = 2; // Valor por defecto para pantallas más grandes
+    } else if (window.matchMedia("(max-width: 1366px)").matches){
+        visibleItems = 3; // Valor por defecto para pantallas más grandes
+    } else {
+        visibleItems = 4; // Valor por defecto para pantallas más grandes
+    }
+    updateCarousel(); // Actualiza el carrusel cada vez que cambia visibleItems
+}
+
+function updateCarousel() {
+    const carousel = document.querySelector('.carouselImages');
+    const carouselItem = document.querySelector('.carouselImages-item');
+
+    // Asegúrate de que el ancho del contenedor se ajuste al número total de elementos
+    carousel.style.width = `${(100 / visibleItems) * totalSlidess}%`;
+    
+    // Asegúrate de que cada item tenga el ancho correcto
+    items.forEach(item => {
+        item.style.width = `${100 / visibleItems}%`;
+    });
+}
+
+function showSlideImages(index) {
+    const carousel = document.querySelector('.carouselImages');
+    const carouselItem = document.querySelector('.carouselImages-item');
+
+    if (index >= totalSlidess - visibleItems + 1) { // Ajuste para que no muestre espacios vacíos al final
+        currentSlides = totalSlidess - visibleItems; // Corrige para evitar sobrepasar el límite
+    } else if (index < 0) {
+        currentSlides = 0;
+    } else {
+        currentSlides = index;
+    }
+
+    const offset = -currentSlides * carouselItem.clientWidth; // Mueve el carrusel un 25% por cada imagen
+    carousel.style.transform = `translateX(${offset}px)`;
+}
+
+function nextSlideImages() {
+    if (currentSlides < totalSlidess - visibleItems) {
+        showSlideImages(currentSlides + 1);
+    } else {
+        showSlideImages(0); // Vuelve al inicio si llega al final
+    }
+}
+
+function prevSlideImages() {
+    if (currentSlides > 0) {
+        showSlideImages(currentSlides - 1);
+    } else {
+        showSlideImages(totalSlidess - visibleItems); // Va al final si está en el principio
+    }
+}
+
+// Inicializa el carrusel
+updateCarousel();
+
+// Agrega un event listener para ajustar cuando la pantalla cambie de tamaño
+window.addEventListener('resize', updateVisibleItems);

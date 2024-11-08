@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/helvetica-neue-55');
+
+/* https://www.cdnfonts.com/helvetica-neue-55.font */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fFamily);
+}
+
+:root {
+    --negro: black;
+    --blanco: white;
+
+    --Sombra: rgba(0, 0, 0, 0.12);
+
+    --grisNormal: rgb(227, 227, 227);
+    --grisClaro: rgb(244, 244, 244);
+    --grisOscuro: rgb(177, 177, 177);
+
+    --rojo: rgb(255, 0, 0);
+    --rojoOscuro: rgb(219, 3, 3);
+
+    --azul: rgb(26, 125, 211);
+
+    --negroClaro: rgb(24, 24, 24);
+
+    --fFamily: 'Helvetica Neue', sans-serif;
+    --fFamily2:  "Barlow", sans-serif;
+    --fWeight: 400;
+    --fStyle: normal;
+
+    /* --maxWITH: 1440px; */
+    --maxWITH: 95%;
+
+    --headerHEIGHT: 60px;
+    --headerTOPH: 40px;
+    /* --carouselMAXHEIGHT: 600px; */
+    --carouselMAXHEIGHT: 600px;
+
+    --presentacionHeight: 60vh;
+    --imgsHeigh: 30vh;
+}
+
+
+/* --------- */
+
+
+/* --------------------------------- */
+
+.header {
+    top: 0;
+}
+
+.main {
+    margin-top: calc(var(--headerHEIGHT) + var(--headerTOPH));
+    height: calc(100vh - (var(--headerHEIGHT) + var(--headerTOPH)));
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--grisClaro);
+
+    overflow-x: hidden;
+}
+
+
+/* SECTION */
+
+.main .cuenta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    background-color: var(--blanco);
+
+    padding: 40px 30px;
+
+    width: 50vw;
+
+    gap: 20px;
+}
+
+.cuenta .info {
+    
+}
+
+.cuenta .logout {
+    all: unset;
+    font-family: var(--fFamily);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--blanco);
+    text-align: center;
+
+    background-color: var(--rojo);
+    padding: 15px 30px;
+
+    transition: 0.3s;
+    border: 3px solid var(--rojo);
+
+    cursor: pointer;
+
+    width: 200px;
+
+    margin-top: 30px;
+}
+
+.cuenta .logout:hover {
+    box-shadow: inset 260px 0 0 0 var(--grisClaro);
+    color: var(--rojo);
+}
+
+.cuenta .administracion {
+    all: unset;
+    font-family: var(--fFamily);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--blanco);
+    text-align: center;
+
+    background-color: var(--rojo);
+    padding: 15px 30px;
+
+    transition: 0.3s;
+    border: 3px solid var(--rojo);
+
+    cursor: pointer;
+
+    width: 200px;
+}
+
+.cuenta .administracion:hover {
+    box-shadow: inset 260px 0 0 0 var(--grisClaro);
+    color: var(--rojo);
+}
+
+.cuenta h1 {
+    color: var(--rojo);
+    font-family: var(--fFamily2);
+    font-size: 60px;
+    font-weight: 800;
+
+    text-align: center;
+
+}
+
+@media (max-width: 1024px) {
+    .main .cuenta {
+        width: 80vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .main .cuenta {
+        display: flex;
+        padding-top: calc(100vh - 75vh);
+
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
+@media (max-width: 500px) {
+    .main .cuenta {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .main .cuenta h1 {
+        font-size: 50px;
+    }
+}

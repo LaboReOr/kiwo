@@ -1,0 +1,123 @@
+/* Carousel section */
+.carouselImages-container {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    height: var(--carouselIMAGESHEIGH);
+}
+
+.carouselImages {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    /* width: calc(100% * 6 / 4); 100% * elementos totales / visibles */
+    height: 100%;
+}
+
+.carouselImages-item {
+    width: 25%; /* Cada item ocupa el 25% del contenedor para mostrar 4 a la vez */
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.carouselImages-item div {
+    background-color: var(--blanco);
+    border-radius: 5px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.12);
+    overflow: hidden;
+    /* border: 4px solid red; */
+    width: 240px;
+}
+
+.carouselImages-item div section {
+    background-color: var(--rojo);
+    height: 100%;
+    padding: 10px 18px;
+}
+
+.carouselImages-item img {
+    width: 100%; /* Ajusta el ancho de la imagen al 100% del contenedor */
+    height: 70%;
+    object-fit: contain; /* Para asegurar que la imagen se recorte o estire adecuadamente */
+    overflow: hidden;
+    transform: scale(0.9);
+    transition: 0.2s;
+
+    padding: 7px 18px;
+}
+
+.carouselImages-item p {
+    font-weight: 400;
+    transition: 0.12s;
+}
+
+.carouselImages-item:hover img{
+    transform: scale(1);
+}
+
+
+.carouselImages-item h3,
+.carouselImages-item p {
+    color: var(--blanco);
+    text-decoration: none;
+}
+
+.carouselImages-item h3{
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.carouselImages-controls {
+    position: absolute;
+    top: 35%;
+    width: 100%;
+}
+
+.carouselImages-item a{
+    text-decoration: none;
+}
+
+.carouselImages-controls button {
+    display: block;
+    padding: calc(var(--carouselIMAGESHEIGH)/2 - 3vw/1.4996) 40px;
+    border: none;
+
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    font-size: 2vw;
+    transition: opacity 0.2s;
+
+    z-index: 10;
+}
+
+.prevImages {
+    position: absolute;
+    left: 0;
+    border-radius: 0 5px 5px 0;
+}
+
+.nextImages {
+    position: absolute;
+    right: 0;
+    border-radius: 5px 0 0 5px;
+}
+
+.carouselImages-section {
+    width: 100%;
+    height: auto;
+}
+
+.carousel-sectionImages:hover button {
+    display: block;
+}
+
+
+/* @media (max-width:710px) {
+    .carouselImages-item {
+        width: 12%;
+    }
+    .carouselImages-item div {
+        width: 180px;
+    }
+} */

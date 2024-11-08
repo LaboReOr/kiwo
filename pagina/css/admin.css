@@ -1,0 +1,17 @@
+.header {
+    top: 0;
+}
+
+.main {
+    margin-top: calc(var(--headerHEIGHT) + var(--headerTOPH));
+    height: calc(100vh - (var(--headerHEIGHT) + var(--headerTOPH)));
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--grisClaro);
+
+    overflow-x: hidden;
+}

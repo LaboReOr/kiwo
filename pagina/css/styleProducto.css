@@ -1,0 +1,567 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/helvetica-neue-55');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box ;
+    /* font-family: "Roboto", sans-serif; */
+    font-family: "Barlow", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+:root {
+    --letra: black;
+    --blanco: white;
+
+    --Sombra: rgba(0, 0, 0, 0.12);
+
+    --semiNegro: rgb(54, 54, 54);
+
+    --verdecito: #00a650;
+
+    --semiBlanco: rgb(241, 241, 241);
+    
+    --gris: rgb(227, 227, 227);
+    --grisClaro: rgb(248, 248, 248);
+    --grisOscuro: rgb(177, 177, 177);
+
+    --rojo: rgb(255, 0, 0);
+    --grisRojo: rgb(255, 220, 220);
+    --rojoOscuro: rgb(236, 0, 0);
+
+    --azul: rgb(0, 145, 255);
+    --grisAzul: rgba(194, 218, 255, 0.424);
+
+    --fFamily: 'Helvetica Neue', sans-serif;
+    --fFamily2:  "Barlow", sans-serif;
+    --fWeight: 400;
+    --fStyle: normal;
+
+    --productosTamano: 23vw;
+
+    --maxWITH: 97.5%;
+
+    --headerHEIGHT: 60px;
+
+}
+
+main{
+    padding-top: calc(var(--headerHEIGHT) + var(--headerTOPH) + 2vh);
+    padding-bottom: 2vh;
+
+    width: 100%;
+
+    /* background-color: var(--grisClaro); */
+    background-color: var(--blanco);
+
+}
+
+
+.pagina img{
+    /* width: 33vw;
+    height: 33vw; */
+
+    max-height: 100%;
+    object-fit: contain;
+    width: 70%;
+}
+
+.prodIMG {
+    padding: 20px;
+    height: 70vh;
+}
+
+.foto{
+    display: flex;
+}
+
+.thumbnails{
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+
+.thumbnails img{
+    width: 75px;
+    height: 75px;
+    margin: 2px 0;
+
+    border-radius: 5px;
+    border: 1px solid var(--gris);
+
+    transition: 0.3s;
+}
+
+.thumbnail:hover{ 
+    border: 1px solid var(--rojo);
+
+    cursor: pointer;
+}
+
+.thumbnail.rojitoThm {
+    border: 1px solid var(--rojo);
+}
+
+.pagina{
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+
+    background-color: white;
+
+    border-radius: 5px;
+    padding: 15px 15px;
+    width: 85%;
+    margin: 0 auto;
+    /* height: 35vw; */
+    height: auto;
+    min-height: 420px;
+
+    /* border: solid 0.5px var(--gris); */
+}
+
+.recorrer {
+    width: 65%;
+    height: auto;
+}
+
+.pagina .izqProd {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    width: 100%;
+
+    position: sticky;
+    top: 100px;
+}
+
+.datos{
+
+    padding: 10px 15px;
+
+    border-radius: 5px;
+
+    width: 35%;
+    height: 100%;
+}
+
+.datos .desc {
+    margin-bottom: 10px;
+}
+
+.datos .OFF_precio {
+    font-weight: 700;
+    color: var(--verdecito);
+}
+
+.datos .descripcion {
+    margin-top: 10px;
+}
+
+.datos .descripcion h4 {
+    color: var(--letra);
+    font-weight: 500;
+
+}
+
+.datos .descripcion p {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+@media (max-width: 1366px) {
+    .pagina {
+        width: 95%;
+    }
+}
+
+.datos h3{
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.datos h4{
+    color: var(--grisOscuro);
+
+    position: relative;
+    bottom: 0;
+
+    margin-bottom: 5px;
+}
+
+.datos h5{
+    color: var(--grisOscuro);
+    text-decoration: line-through;
+
+    margin-top: 10px;
+    position: relative;
+    top: 0.5vw;
+}
+
+.datos h2{
+    font-size: 35px;
+}
+.datos h2 span{
+    font-size: 15px;
+    position: relative;
+    bottom: 13px;
+}
+.datos i{
+    position: relative;
+    top: 2px;
+}
+
+.datos button{
+    border: none;
+
+    /* padding: 0 60px; */
+    height: 50px;
+    
+
+    background-color: var(--rojo);
+    color: var(--blanco);
+
+    font-size: 18px;
+    font-weight: 500;
+
+    border-radius: 3px;
+
+    cursor: pointer;
+    transition: 0.5;
+}
+
+.datos .buyNow {
+    width: 100%;
+    border: 2px solid var(--rojo);
+    transition: 0.4s;
+    margin-top: 10px;
+}
+
+.buyNow:hover {
+    box-shadow: inset calc(85vw * 0.35 - 15px) 0 0 0 var(--grisClaro);
+    color: var(--rojo);
+}
+
+.datos .cartButton{
+    position: relative;
+    top: 3px;
+
+    padding: 0 15px;
+
+    background-color: var(--grisRojo);
+    color: var(--rojo);
+    border: 2px solid var(--grisRojo);
+    transition: 0.5s;
+}
+
+.datos .cartButton:hover{
+    box-shadow: inset 60px 0 0 0 var(--rojo);
+    border: 2px solid var(--rojo);
+    color: white;
+}
+
+.bxs-cart-add{
+    font-size: 25px;
+    position: relative;
+    right: 2px;
+}
+
+.sBlue{
+    color: var(--rojo);
+}
+
+/* .colores{
+    margin-top: 20px;
+}
+
+.colores h4{
+    color: black;
+}
+.colores img{
+    width: 60px;
+    height: 60px;
+
+    margin: 0 3px;
+
+    border-radius: 5px;
+    border: 1px solid var(--gris);
+
+    cursor: pointer;
+}
+
+.colores img:hover{
+    border: 1px solid var(--rojo);
+}
+ */
+
+.colsTall {
+    margin: 10px 0;
+}
+
+.colsTall h4{
+    color: var(--letra);
+    font-weight: 500;
+}
+
+.colsTall select{
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+}
+
+
+
+@media (max-width: 1366px) {
+    /* .colores img {
+        width: 40px;
+        height: 40px;
+    } */
+    .buyNow:hover {
+        box-shadow: inset calc(95vw * 0.35 - 15px) 0 0 0 var(--grisClaro);
+        color: var(--rojo);
+    }
+}
+
+
+
+
+/* Carousel section */
+.carousel-container {
+    width: 100%;
+    max-height: var(--carouselMAXHEIGHT);
+    position: relative;
+    overflow: hidden;
+    /* padding: calc((100vh - var(--carouselMAXHEIGHT) - var(--headerHEIGHT) + var(--headerTOPH))/2) 0; */
+}
+
+.carousel-container .gradient {
+    width: 100%;
+    height: 20%;
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(180deg,rgba(0, 0, 0, 0),var(--grisClaro));
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item {
+    min-width: 100%;
+    /* height: 541.41px; Importantisimo */
+    height: auto; /*Importantisimo*/
+    display: flex;
+    justify-content: center;
+    max-height: var(--carouselMAXHEIGHT);
+}
+
+.carousel-item a {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.carousel-item img {
+    width: 100vw;
+    height: 100%;
+    object-fit: contain;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.carousel-controls button {
+    display: none;
+    padding: calc(var(--carouselMAXHEIGHT)/2 - 3vw/1.4996) 40px;
+    border: none;
+
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    opacity: 0.6;
+    font-size: 2vw;
+    transition: opacity 0.2s;
+}
+
+.carousel-controls button:hover {
+    opacity: 1;
+}
+
+.prev {
+    position: absolute;
+    left: 0;
+    border-radius: 0 5px 5px 0;
+}
+
+.next {
+    position: absolute;
+    right: 0;
+    border-radius: 5px 0 0 5px;
+}
+
+.carousel-section {
+    width: 100%;
+    height: 100%;
+    margin-top: calc(var(--headerHEIGHT) + var(--headerTOPH));
+    background-color: var(--blanco);
+    max-height: var(--carouselMAXHEIGHT);
+}
+
+.carousel-section:hover button {
+    display: block;
+}
+
+@media (max-width: 1366px) {
+    .carousel-item {
+        height: auto;
+    }
+    .carousel-controls {
+        top: 5%;
+    }
+    .carousel-controls button {
+        padding: 15% 4vw;
+    }
+}
+
+.ofertas {
+    margin: 5vh 2vw;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 96%;
+}
+
+.ofertas .ofertasTop {
+    display: flex;
+    flex-direction: column;
+}
+
+.ofertas h2 {
+    font-family: var(--fFamily2);
+    font-size: 90px;
+    font-weight: 900;
+    color: var(--rojoOscuro);
+}
+
+.ofertas button,
+.ofertasTop button {
+    font-family: var(--fFamily);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--blanco);
+    text-align: center;
+
+    background-color: var(--rojo);
+    padding: 15px 30px;
+    margin: 0 0 30px 0;
+    border-radius: 100px;
+
+    transition: 0.4s;
+    border: 3px solid var(--rojo);
+
+    cursor: pointer;
+}
+
+.ofertas .ofertasBot {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ofertas button:hover,
+.ofertasTop button:hover {
+    box-shadow: inset 400px 0 0 0 var(--grisClaro);
+    color: var(--rojo);
+}
+
+.ofertasBot h3 {
+    font-family: "Barlow", sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.ofertasBot p {
+    font-family: "Barlow", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.ofertasBot section {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+
+@media (max-width: 1024px) {
+    main{
+        background-color: var(--blanco);
+    }
+
+    .pagina{
+        border: none;
+        flex-direction: column;
+
+        width: 100%;
+        padding: 0;
+        height: auto;
+    }
+
+    .recorrer {
+        width: 100%;
+    }
+
+    .foto{
+        flex-direction: column-reverse;
+    }
+
+    .pagina .prodIMG{
+        width: 100%;
+        height: auto;
+    }
+
+    .thumbnails{
+        flex-direction: row;
+        margin: 0 auto;
+    }
+
+    .thumbnails img{
+        width: 75px;
+        height: 75px;
+
+        margin: 0 5px;
+    }
+
+    .datos{
+        width: 100%;
+
+        text-align: center;
+
+        border: solid 1px var(--gris);
+    }
+    .pagina .izqProd {
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
+    .buyNow:hover {
+        border-radius: 10px;
+        box-shadow: inset calc(100vw - 15px) 0 0 0 var(--grisClaro);
+        color: var(--rojo);
+    }
+}
+
+.cantidadDiv input {
+    width: 100%;
+}

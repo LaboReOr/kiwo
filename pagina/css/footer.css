@@ -1,0 +1,80 @@
+
+/* ------------------------ */
+/* FOOTER */
+/* ------------------------ */
+footer .topFooter {
+    display: flex;
+    justify-content: center;
+    padding: 5vh;
+    gap: 5vh;
+    
+    /* background-color: var(--negroClaro); */
+    background-color: var(--rojo);
+}
+
+@media (max-width: 500px) {
+    footer .topFooter {
+        gap: 2vh;
+    }
+}
+
+footer .topFooter div ul {
+    list-style: none;
+}
+
+footer .topFooter div {
+    color: var(--blanco);
+    font-family: var(--fFamily);
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+footer .topFooter li a {
+    text-decoration: none;
+    color: var(--blanco);
+}
+
+footer .topFooter div h3{
+    font-weight: 500;
+}
+
+footer .topFooter p,
+footer .topFooter li{
+    filter: opacity(70%);
+}
+
+footer .topFooter li:hover{
+    filter: opacity(100%);
+    cursor: pointer;
+}
+
+footer .botFooter {   
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    width: 100%;
+
+    color: var(--blanco);
+
+    border-top: 1px solid var(--blanco);
+    /* background-color: var(--negroClaro); */
+    background-color: var(--rojoOscuro);
+}
+
+footer .botFooter p{
+    filter: opacity(60%);
+}
+
+footer .botFooter a{    
+    color: var(--blanco);
+    text-decoration: none;
+
+    filter: opacity(60%);
+    transition: 0.2s;
+}
+
+footer .botFooter a:hover{
+    filter: opacity(100%);
+}

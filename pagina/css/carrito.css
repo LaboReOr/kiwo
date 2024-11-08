@@ -1,0 +1,406 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/helvetica-neue-55');
+
+/* https://www.cdnfonts.com/helvetica-neue-55.font */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fFamily);
+}
+
+:root {
+    --negro: black;
+    --blanco: white;
+
+    --Sombra: rgba(0, 0, 0, 0.12);
+
+    --grisNormal: rgb(227, 227, 227);
+    --grisClaro: rgb(244, 244, 244);
+    --grisOscuro: rgb(177, 177, 177);
+    --grisCarrito: #ccc;
+    --grisCarritoLetra: #757575;
+
+    --rojo: rgb(255, 0, 0);
+    --rojoOscuro: rgb(219, 3, 3);
+
+    --azul: rgb(26, 125, 211);
+
+    --negroClaro: rgb(24, 24, 24);
+
+    --fFamily: 'Helvetica Neue', sans-serif;
+    --fFamily2:  "Barlow", sans-serif;
+    --fWeight: 400;
+    --fStyle: normal;
+
+    /* --maxWITH: 1440px; */
+    --maxWITH: 95%;
+
+    --headerHEIGHT: 60px;
+    --headerTOPH: 40px;
+    /* --carouselMAXHEIGHT: 600px; */
+    --carouselMAXHEIGHT: 600px;
+
+    --presentacionHeight: 60vh;
+    --imgsHeigh: 30vh;
+}
+
+header {
+    position: fixed;
+    top: 0;
+}
+
+main {
+    margin-top: 150px;
+    margin-bottom: 50px;
+    min-height: calc(100vh - 100px - 315px);
+}
+
+footer {
+    z-index: -1;
+}
+
+p {
+    z-index: -1;
+}
+
+/* ///////////////////////////////////////////////// */
+
+.main {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.mainProds {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    width: 80%;
+}
+
+.mainProds h2 {
+    font-size: 20px;
+    font-weight: 500;
+    font-family: var(--fFamily2);
+}
+
+.elementosCarrito {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* HR */
+
+hr {
+    margin: 15px 0;
+}
+
+/* carrito productos */
+
+.carritoProds {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    width: calc(100% - 300px);
+}
+
+.productosTitulos {
+    display: flex;
+    justify-content: space-between;
+    color: var(--grisCarritoLetra);
+}
+
+.productos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    border: 1px solid var(--grisCarrito);
+    border-radius: 15px;
+    padding: 10px;
+
+    height: 180px;
+}
+
+.productos img {
+    height: 100%;
+    object-fit: contain;
+}
+
+.precio p {
+    filter: opacity(0.6);
+}
+
+.productos h3 {
+    font-size: 20px;
+    font-weight: 00;
+    font-family: var(--fFamily2);
+    width: 120px;
+    max-width: 120px;
+}
+
+.productos button {
+    all:  unset;
+    height: 20%;
+}
+
+.productos button i {
+    font-size: 20px;
+}
+
+.productos button:hover {
+    cursor: pointer;
+}
+
+/* carrito informacion */
+
+.carritoInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    width: 300px;
+
+    font-family: var(--fFamily2);
+}
+
+.carritoInfo .tituloInfo {
+    display: block;
+    font-family: var(--fFamily2);
+    font-weight: 600;
+}
+
+.cupon input{
+    all: unset;
+    width: 100%;
+    border: 1px solid var(--negro);
+    padding: 2px 10px;
+    border-radius: 3px;
+}
+
+.cupon {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cupon form {
+    display: flex;
+    gap: 5px;
+}
+
+.cupon form button{
+    all: unset;
+    height: 20px;
+
+    text-align: center;
+
+    background-color: var(--rojo);
+    color: var(--blanco);
+    border: 2px solid var(--rojo);
+
+    padding: 2px 10px;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    border-radius: 3px;
+
+    transition: 0.5s;
+}
+
+.cupon form button:hover {
+    cursor: pointer;
+    box-shadow: inset 300px 0 0 0 var(--grisClaro);
+    color: var(--rojo);;
+}
+
+.cantidad input {
+    all: unset;
+    text-align: center;
+    width: 50px;
+}
+
+/* PRECIO */
+
+.precio {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.precio .categorias h4 {
+    font-family: var(--fFamily2);
+    font-weight: 500;
+}
+
+.precio .categorias {
+    display: flex;
+    justify-content: space-between;
+}
+
+.precio .total{
+    display: flex;
+    justify-content: space-between;
+    
+    margin-top: 10px;
+
+    font-family: var(--fFamily2);
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.precio .total p,
+.precio .total h4 {
+    font-family: var(--fFamily2);
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--negro);
+    
+    margin: 10px 0;
+    
+    filter: none;
+}
+
+.comprar {
+    all: unset;
+    height: 50px;
+
+    text-align: center;
+
+    background-color: var(--rojo);
+    color: var(--blanco);
+    border: 2px solid var(--rojo);
+
+    font-size: 18px;
+    font-weight: 500;
+
+    border-radius: 3px;
+
+    transition: 0.5s;
+}
+
+.comprar:hover {
+    cursor: pointer;
+    box-shadow: inset 300px 0 0 0 var(--grisClaro);
+    color: var(--rojo);;
+}
+
+
+
+/* //////////////////////////////////////// */
+/* MEDIA */
+
+.prodMobile {
+    display: none;
+}
+
+.hideOn {
+    display: none;
+}
+
+.hideOff {
+    display: block;
+}
+
+.hideBuy {
+    display: block;
+}
+
+.mobileBuy {
+    display: none;
+}
+
+@media (max-width: 1366px) {
+    .mainProds {
+        flex-direction: column;
+        width: 90%;
+    }
+    .carritoProds,
+    .carritoInfo {
+        width: 100%;
+    }
+    .comprar:hover {
+        cursor: pointer;
+        box-shadow: inset calc(100vw * 0.9) 0 0 0 var(--grisClaro);
+        color: var(--rojo);;
+    }
+    .carritoInfo .tituloInfo {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 979px) {
+    .prodMobile div {
+        display: none;
+    }
+
+    .prodMobile {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hideOff {
+        display: none;
+    }
+
+    .productosTitulos {
+        display: none;
+    }
+
+    .hideOn {
+        display: block;
+    }
+
+    .quantity {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .quantity h2 {
+        font-size: 15px;
+    }
+
+    .hideBuy {
+        display: none;
+    }
+
+    .hideBuy .bx {
+        display: none;
+    }
+
+    .mobileBuy {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .mobileBuy h3 {
+        font-size: 15px;
+    }
+
+    .cantidad input {
+        width: 70px;
+    }
+
+    .productos {
+        justify-content: space-evenly;
+    }
+}
+
+@media (max-width: 550px) {
+    .productos {
+        justify-content: space-between;
+    }
+    .productos img {
+        height: 60%;
+    }
+}
