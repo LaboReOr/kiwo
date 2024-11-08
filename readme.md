@@ -4,4 +4,6 @@
 
 </div>
 
-<img src="kiwo.jpg">
+<a href="https://github.com/LaboReOr/kiwo">
+  <img src="kiwo.jpg">
+</a>
