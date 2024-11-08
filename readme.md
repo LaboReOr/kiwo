@@ -2,6 +2,8 @@
   
 # KIWO Pagina Web
 
+REARTES CAMILO - ORGNERO NICOLAS
+
 </div>
 
 <a href="https://github.com/LaboReOr/kiwo">
